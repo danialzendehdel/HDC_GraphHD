@@ -59,4 +59,11 @@ Algorithm 1: GraphHD training procedure
 8.         Hℓ ← Hℓ ∪ bundle(HG)
 9.     Ci ← bundle(Hℓ)
 10. return {C1, ..., Ck}
+```
+=================================================================================
+
+Useful links:
+- [BHV](https://github.com/Adam-Vandervorst/PyBHV?tab=readme-ov-file)
+- [HD-Computing](https://www.hd-computing.com/)
+- [dataset](https://chrsmrrs.github.io/datasets/docs/datasets/)
 
