@@ -25,3 +25,8 @@ pip install -r requirements.txt
   - **Graph Encoding**: The graph is encoded into a high-dimensional vector using HDC.
   - **Graph Classification**: The encoded graph is then used to train a classifier for graph classification tasks.
   - **Graph Decoding**: The classifier is used to predict the class of a new graph by decoding the high-dimensional vector into a class label.
+
+=================================================================================
+#### Graph Encoding
+- In the graph structure, the nodes and edges are represented as high-dimensional vectors. However, an identifier has to be determined for each node and edge in the graph to perform a correspondence between the vertices and edges of the graph and the high-dimensional vectors.
+- The identifier in this paper is _PageRank_ centrality, which is a measure of the importance of a node in a graph, which works as follows, algorithm receives a graph as input and returns, for each vertex, $v_i \in V$, a value $c(v_i) \in [0, 1]$
