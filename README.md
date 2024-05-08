@@ -37,10 +37,9 @@ $$  Enc_e(v_i, v_j) = Enc_v(v_i) \oplus Enc_v(v_j) $$
 
 - The $\times$ symbol represents the binding operation in HDC, which is the standard operation to represent an association between a pair of hypervectors, similar to the role of an edge in a graph. The result of the binding operation is a third vector, statistically quasi-orthogonal to the operand vectors, which we name edge-hypervectors.
 
+=================================================================================
 
-# GraphHD Training Procedure
-
-## Algorithm
+#### Training Procedure
 
 The following is the training procedure used in the GraphHD approach for hyperdimensional computing (HDC) model development:
 
