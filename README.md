@@ -29,4 +29,9 @@ pip install -r requirements.txt
 =================================================================================
 #### Graph Encoding
 - In the graph structure, the nodes and edges are represented as high-dimensional vectors. However, an identifier has to be determined for each node and edge in the graph to perform a correspondence between the vertices and edges of the graph and the high-dimensional vectors.
-- The identifier in this paper is _PageRank_ centrality, which is a measure of the importance of a node in a graph, which works as follows, algorithm receives a graph as input and returns, for each vertex, $v_i \in V$, a value $c(v_i) \in [0, 1]$
+- The identifier in this paper is _PageRank_ centrality, which is a measure of the importance of a node in a graph, which works as follows, algorithm receives a graph as input and returns, for each vertex, $v_i \in V$, a value $c(v_i) \in [0, 1]$ that measures its “importance” in the graph.
+- Bt this way a meaningful identifier is published between vertices in different graphs. Accordingly, vertices of different graphs, but with the same centrality rank, are encoded to the same random hypervector from the basis set.
+- After creating the hypervectors for each vertex, GraphHD makes use of these representations to also encode each edge $(vi,vj) \in E(G)$. The edge encoding function $Enc_e$ is defined as follows:
+  ```latex
+  Enc_e(v_i, v_j) = Enc_v(v_i) \oplus Enc_v(v_j)
+  ```
