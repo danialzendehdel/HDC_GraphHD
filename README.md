@@ -32,6 +32,32 @@ pip install -r requirements.txt
 - The identifier in this paper is _PageRank_ centrality, which is a measure of the importance of a node in a graph, which works as follows, algorithm receives a graph as input and returns, for each vertex, $v_i \in V$, a value $c(v_i) \in [0, 1]$ that measures its “importance” in the graph.
 - Bt this way a meaningful identifier is published between vertices in different graphs. Accordingly, vertices of different graphs, but with the same centrality rank, are encoded to the same random hypervector from the basis set.
 - After creating the hypervectors for each vertex, GraphHD makes use of these representations to also encode each edge $(vi,vj) \in E(G)$. The edge encoding function $Enc_e$ is defined as follows:
-  ```latex
-  Enc_e(v_i, v_j) = Enc_v(v_i) \oplus Enc_v(v_j)
-  ```
+
+$$  Enc_e(v_i, v_j) = Enc_v(v_i) \oplus Enc_v(v_j) $$
+
+- The $\times$ symbol represents the binding operation in HDC, which is the standard operation to represent an association between a pair of hypervectors, similar to the role of an edge in a graph. The result of the binding operation is a third vector, statistically quasi-orthogonal to the operand vectors, which we name edge-hypervectors.
+
+
+# GraphHD Training Procedure
+
+## Algorithm
+
+The following is the training procedure used in the GraphHD approach for hyperdimensional computing (HDC) model development:
+
+```plaintext
+Algorithm 1: GraphHD training procedure
+
+1. GraphHD_Training (GL);
+   - Input: A training set of graphs GL with their respective labels and a set of random vertex-hypervectors Hv.
+   - Output: A trained HDC model M consisting of the class vectors {C1, ..., Ck}
+
+2. for each class label i ∈ {1, ..., k} do
+3.     Hℓ ← ∅
+4.     for each graph G ∈ GL such that ℓ(G) = i do
+5.         HG ← ∅
+6.         for each edge e ∈ E(G) do
+7.             HG ← HG ∪ Enc(e)
+8.         Hℓ ← Hℓ ∪ bundle(HG)
+9.     Ci ← bundle(Hℓ)
+10. return {C1, ..., Ck}
+
