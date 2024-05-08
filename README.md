@@ -33,7 +33,7 @@ pip install -r requirements.txt
 - Bt this way a meaningful identifier is published between vertices in different graphs. Accordingly, vertices of different graphs, but with the same centrality rank, are encoded to the same random hypervector from the basis set.
 - After creating the hypervectors for each vertex, GraphHD makes use of these representations to also encode each edge $(vi,vj) \in E(G)$. The edge encoding function $Enc_e$ is defined as follows:
 
-$$  Enc_e(v_i, v_j) = Enc_v(v_i) \cross Enc_v(v_j) $$
+$$  Enc_e(v_i, v_j) = Enc_v(v_i) \times Enc_v(v_j) $$
 
 - The $\times$ symbol represents the binding operation in HDC, which is the standard operation to represent an association between a pair of hypervectors, similar to the role of an edge in a graph. The result of the binding operation is a third vector, statistically quasi-orthogonal to the operand vectors, which we name edge-hypervectors.
 
